@@ -16,7 +16,7 @@ let dataValidationPageRedirect;
 let privacyPolicyPage;
 
 test.beforeEach(async () => {
-    const browser =  await chromium.launch({args: ['--use-fake-ui-for-media-stream','--no-sandbox']});
+    const browser =  await chromium.launch({args: ['--use-fake-device-for-media-stream','--no-sandbox']});
     const context = await browser.newContext({permissions: ["camera","microphone"]});
     const page = await context.newPage();
     //const page = await browser.newPage();
