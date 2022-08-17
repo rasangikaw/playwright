@@ -28,8 +28,6 @@ exports.DataValidationPageRedirect = class DataValidationPageRedirect extends (
   }
 
   async clickOnContinueButton() {
-                console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         console.log(await this.page.content());
     await this.btnContinue.click();
   }
