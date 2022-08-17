@@ -19,3 +19,4 @@ COPY . .
 
 RUN npx playwright install
 RUN npm ci
+
