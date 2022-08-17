@@ -8,8 +8,8 @@ WORKDIR /usr/src/app
 COPY . .
 
 #RUN npm ci
-RUN apt-get update
-RUN apt-get install wget
+#RUN apt-get update
+#RUN apt-get install wget
 
 # Install Chrome.
 #RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
