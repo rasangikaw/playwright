@@ -70,7 +70,7 @@ const config = {
         channel:'chromium'
           contextOptions: {
           // chromium-specific permissions
-          permissions: ['microphone', 'camera'],
+          permissions: ['microphone', 'camera']
         },
         
       },
