@@ -1,0 +1,38 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Playwright Tests
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+jobs:
+  build:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Build docker image
+        run: docker build --build-arg GH_USERNAME=${{ secrets.GH_USERNAME }} --build-arg GH_TOKEN=${{ secrets.GITHUB_TOKEN }} -t ${{ secrets.DOCKER_HUB_USERNAME }}/veriffqarepo:${{ github.sha }} .
+      - name: Docker push
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/veriffqarepo:${{ github.sha }}
+
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    container:
+      image: buddhika88/veriffqarepo:${{ github.sha }}
+    steps:
+      - name: execute test
+        run: |
+          cd /usr/src/app
+          xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0, 1920x1080x24' npm run test
+    needs:
+      - build
