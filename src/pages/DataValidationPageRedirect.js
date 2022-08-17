@@ -16,9 +16,6 @@ exports.DataValidationPageRedirect = class DataValidationPageRedirect extends (
   }
 
   async isTextMessageDisplayed(text) {
-            console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        console.log(await this.page.innerText("h1"));
     this.txtMessage = await this.replace(this.txtMessage, text, this.page);
     await expect(this.txtMessage).toHaveText(
       "Please have your " + text + " ready."
@@ -31,6 +28,9 @@ exports.DataValidationPageRedirect = class DataValidationPageRedirect extends (
   }
 
   async clickOnContinueButton() {
+                console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        console.log(await this.page.content());
     await this.btnContinue.click();
   }
 };
