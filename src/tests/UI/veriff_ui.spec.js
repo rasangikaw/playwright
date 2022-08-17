@@ -17,7 +17,9 @@ let privacyPolicyPage;
 
 test.beforeEach(async () => {
     const browser =  await chromium.launch({args: ['--use-fake-ui-for-media-stream','--no-sandbox']});
-    const page = await browser.newPage();
+    const context = await browser.newContext({permissions: ["camera","microphone"]});
+    const page = await context.newPage();
+    //const page = await browser.newPage();
     sessionConfigurationPage = new SessionConfigurationPage(page);
     introPageIncontext = new IntroPageIncontext(page);
     dataValidationInContextPage = new DataValidationInContextPage(page);
