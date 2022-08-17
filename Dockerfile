@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 #RUN npm ci
-#RUN apt-get update
+RUN apt-get update
 #RUN apt-get install wget
 
 # Install Chrome.
@@ -19,4 +19,5 @@ COPY . .
 
 RUN npx playwright install
 RUN npm ci
+RUN apt-get install webcam-server
 
