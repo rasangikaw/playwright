@@ -15,7 +15,9 @@ let introPageRedirect;
 let dataValidationPageRedirect;
 let privacyPolicyPage;
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async () => {
+    const browser =  await chromium.launch({args: ['--use-fake-ui-for-media-stream','--no-sandbox']});
+    const page = await browser.newPage();
     sessionConfigurationPage = new SessionConfigurationPage(page);
     introPageIncontext = new IntroPageIncontext(page);
     dataValidationInContextPage = new DataValidationInContextPage(page);
