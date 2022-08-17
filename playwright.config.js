@@ -66,6 +66,7 @@ const config = {
       use: {
         browserName: 'chromium',
         headless: true,
+        args=['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'],
         //...devices['Desktop Chrome'],
         channel:'chromium'
         
