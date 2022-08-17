@@ -11,12 +11,14 @@ exports.DataValidationInContextPage = class DataValidationInContextPage extends 
     this.txtMessage = page.locator("//h1[text()='Please have your {1} ready.']");
     this.imgDocument = page.locator("//img[contains(@src,'{1}')]");
     this.btnContinue = page.locator("//button[text()='Continue']");
+    this.txt = page.locator("//h1");
   }
 
   async isTextMessageDisplayed(text) {
     this.txtMessage = await this.replace(this.txtMessage, text, this.iframe);
-    console.log(this.txtMessage);
+    console.log(this.txtMessage.textContent());
         console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
     console.log(await this.page.title());
     await expect(this.txtMessage).toHaveText(
       "Please have your " + text + " ready."
