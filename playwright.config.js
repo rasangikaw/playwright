@@ -51,7 +51,6 @@ const config = {
     
 
     headless: true,
-    permissions: ['camera'],
     viewport: { width: 2560, height: 1440 },
     ignoreHTTPSErrors: true,
     
@@ -69,6 +68,10 @@ const config = {
         headless: true,
         //...devices['Desktop Chrome'],
         channel:'chromium'
+          contextOptions: {
+          // chromium-specific permissions
+          permissions: ['microphone', 'camera'],
+        },
         
       },
     }]
