@@ -49,10 +49,7 @@ const config = {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://demo.saas-3.veriff.me',
     
-
-    headless: true,
     viewport: { width: 2560, height: 1440},
-    permissions: ['camera'],
     ignoreHTTPSErrors: true,
     
     video: 'on-first-retry',
@@ -66,7 +63,8 @@ const config = {
       name: 'chromium',
       use: {
         browserName: 'chromium',
-        headless: true,
+        headless: false,
+        permissions : ['camera'],
         //...devices['Desktop Chrome'],
         channel:'chromium'        
       },
