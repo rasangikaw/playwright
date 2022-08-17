@@ -16,7 +16,7 @@ exports.DataValidationInContextPage = class DataValidationInContextPage extends 
 
   async isTextMessageDisplayed(text) {
     this.txtMessage = await this.replace(this.txtMessage, text, this.iframe);
-    console.log(this.txtMessage.textContent());
+    console.log(await this.txtMessage.textContent());
         console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
     console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
     console.log(await this.page.title());
