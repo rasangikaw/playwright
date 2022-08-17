@@ -14,10 +14,10 @@ exports.DataValidationInContextPage = class DataValidationInContextPage extends 
   }
 
   async isTextMessageDisplayed(text) {
-    console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-    console.log(await this.page.title());
     this.txtMessage = await this.replace(this.txtMessage, text, this.iframe);
     console.log(this.txtMessage);
+        console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+    console.log(await this.page.title());
     await expect(this.txtMessage).toHaveText(
       "Please have your " + text + " ready."
     );
