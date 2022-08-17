@@ -37,6 +37,7 @@ test.describe('Veriffme Configuration UI Tests', () => {
         expect(await introPageRedirect.isRedirectIntroPageDisplayed());
         await introPageRedirect.clickOnStartSession();
         console.log("Passed start session");
+        console.log(this.page.content());
         await dataValidationPageRedirect.isTextMessageDisplayed(testdata.passport.documentType);
         await dataValidationPageRedirect.isImgDisplayed(testdata.passport.documentToVerify);
     });
