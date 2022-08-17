@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.25.0-focal
+FROM mcr.microsoft.com/playwright
 
 ARG GH_USERNAME=tempU
 ARG GH_TOKEN=tempT
