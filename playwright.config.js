@@ -51,7 +51,8 @@ const config = {
     
 
     headless: true,
-    viewport: { width: 2560, height: 1440 , permissions: ['camera']},
+    viewport: { width: 2560, height: 1440},
+    permissions: ['camera'],
     ignoreHTTPSErrors: true,
     
     video: 'on-first-retry',
