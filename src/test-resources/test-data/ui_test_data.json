@@ -1,0 +1,29 @@
+{
+    "passport": {
+      "fullName": "John Doe",
+      "sessionLanguage": "English",
+      "documentCountry": "Albania",
+      "documentType": "passport",
+      "launchMethod": "redirect",
+      "documentToVerify": "passport",
+      "imageToVerify" : "passport"
+    },
+    "license": {
+      "fullName": "John Doe",
+      "sessionLanguage": "English",
+      "documentCountry": "Sri Lanka",
+      "documentType": "Driver's license",
+      "launchMethod": "incontext",
+      "documentToVerify": "driver’s license",
+      "imageToVerify" : "drivers-license"
+    },
+    "idCard": {
+      "fullName": "John Doe",
+      "sessionLanguage": "English",
+      "documentCountry": "Australia",
+      "documentType": "ID Card",
+      "launchMethod": "incontext",
+      "documentToVerify": "ID card",
+      "imageToVerify" : "id-card"
+    }
+  }

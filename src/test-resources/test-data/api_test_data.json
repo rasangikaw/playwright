@@ -1,0 +1,52 @@
+{
+    "With_Valid_Payload": {
+        "full_name": "Terese Anni",
+        "lang": "en",
+        "document_country": "AX",
+        "document_type": "PASSPORT",
+        "additionalData": {
+          "isTest": false
+        }
+    },
+    "With_Invalid_Payload_Country": {
+        "full_name": "Terese Anni",
+        "lang": "en",
+        "document_country": "123",
+        "document_type": "PASSPORT",
+        "additionalData": {
+          "isTest": false
+        }
+      },
+
+    "With_Invalid_Payload_DocType": {
+        "full_name": "Terese Anni",
+        "lang": "en",
+        "document_country": "AX",
+        "document_type": "Invalid",
+        "additionalData": {
+          "isTest": false
+        }
+      },
+
+    "With_Invalid_Payload_Lang": {
+        "full_name": "Terese Anni",
+        "lang": "@11233",
+        "document_country": "AX",
+        "document_type": "PASSPORT",
+        "additionalData": {
+          "isTest": false
+        }
+      },
+    "With_Invalid_Payload_Lang_Int": {
+        "full_name": "Terese Anni",
+        "lang": 123,
+        "document_country": "AX",
+        "document_type": "PASSPORT",
+        "additionalData": {
+          "isTest": false
+        }
+      }
+
+
+
+}

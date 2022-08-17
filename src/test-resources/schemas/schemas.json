@@ -1,0 +1,20 @@
+{
+
+    "Session_Creation_Schema":{
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "integrationUrl": {
+          "type": "string"
+        },
+        "sessionToken": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "integrationUrl",
+        "sessionToken"
+      ]
+    }
+
+}
