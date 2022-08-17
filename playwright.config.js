@@ -51,6 +51,7 @@ const config = {
     
 
     headless: true,
+    permissions: ['camera'],
     viewport: { width: 2560, height: 1440 },
     ignoreHTTPSErrors: true,
     
@@ -66,7 +67,6 @@ const config = {
       use: {
         browserName: 'chromium',
         headless: true,
-        args=['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'],
         //...devices['Desktop Chrome'],
         channel:'chromium'
         
