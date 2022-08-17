@@ -33,8 +33,10 @@ test.describe('Veriffme Configuration UI Tests', () => {
 
     test('Veriffme with passport document type via redirect', async () => {
         await sessionConfigurationPage.fillDetailsInSessionConfigurationPage(testdata.passport.fullName, testdata.passport.sessionLanguage, testdata.passport.documentCountry, testdata.passport.documentType, testdata.passport.launchMethod);
+                console.log("filled data #############################");
         expect(await introPageRedirect.isRedirectIntroPageDisplayed());
         await introPageRedirect.clickOnStartSession();
+        console.log("Passed start session");
         await dataValidationPageRedirect.isTextMessageDisplayed(testdata.passport.documentType);
         await dataValidationPageRedirect.isImgDisplayed(testdata.passport.documentToVerify);
     });
@@ -42,8 +44,10 @@ test.describe('Veriffme Configuration UI Tests', () => {
     test('Veriffme with Drivers License document type via InContext', async () => {
 
         await sessionConfigurationPage.fillDetailsInSessionConfigurationPage(testdata.license.fullName, testdata.license.sessionLanguage, testdata.license.documentCountry, testdata.license.documentType, testdata.license.launchMethod);
+                        console.log("filled data #############################");
         expect(await introPageIncontext.isIncontextIntroPageDisplayed());
         await introPageIncontext.clickOnStartSession();
+                console.log("Passed start session");
         await dataValidationInContextPage.isTextMessageDisplayed(testdata.license.documentToVerify);
         await dataValidationInContextPage.isImgDisplayed(testdata.license.imageToVerify);
     });
