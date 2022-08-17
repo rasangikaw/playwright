@@ -16,6 +16,7 @@ exports.DataValidationPageRedirect = class DataValidationPageRedirect extends (
   }
 
   async isTextMessageDisplayed(text) {
+    console.log(await this.page.content());
     this.txtMessage = await this.replace(this.txtMessage, text, this.page);
     await expect(this.txtMessage).toHaveText(
       "Please have your " + text + " ready."
