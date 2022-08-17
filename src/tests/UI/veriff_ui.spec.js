@@ -31,9 +31,8 @@ test.describe('Veriffme Configuration UI Tests', () => {
         await sessionConfigurationPage.fillDetailsInSessionConfigurationPage(testdata.passport.fullName, testdata.passport.sessionLanguage, testdata.passport.documentCountry, testdata.passport.documentType, testdata.passport.launchMethod);
         expect(await introPageRedirect.isRedirectIntroPageDisplayed());
         await introPageRedirect.clickOnStartSession();
-        await dataValidationPageRedirect.clickOnContinueButton();
-//        await dataValidationPageRedirect.isTextMessageDisplayed(testdata.passport.documentType);
-//        await dataValidationPageRedirect.isImgDisplayed(testdata.passport.documentToVerify);
+        await dataValidationPageRedirect.isTextMessageDisplayed(testdata.passport.documentType);
+        await dataValidationPageRedirect.isImgDisplayed(testdata.passport.documentToVerify);
     });
 
     test('Veriffme with Drivers License document type via InContext', async () => {
@@ -41,9 +40,8 @@ test.describe('Veriffme Configuration UI Tests', () => {
         await sessionConfigurationPage.fillDetailsInSessionConfigurationPage(testdata.license.fullName, testdata.license.sessionLanguage, testdata.license.documentCountry, testdata.license.documentType, testdata.license.launchMethod);
         expect(await introPageIncontext.isIncontextIntroPageDisplayed());
         await introPageIncontext.clickOnStartSession();
-                await dataValidationInContextPage.clickOnContinueButton();
-//        await dataValidationInContextPage.isTextMessageDisplayed(testdata.license.documentToVerify);
-//        await dataValidationInContextPage.isImgDisplayed(testdata.license.imageToVerify);
+        await dataValidationInContextPage.isTextMessageDisplayed(testdata.license.documentToVerify);
+        await dataValidationInContextPage.isImgDisplayed(testdata.license.imageToVerify);
     });
 
     test('Veriffme with ID Card document type via InContext', async () => {
@@ -51,9 +49,8 @@ test.describe('Veriffme Configuration UI Tests', () => {
         await sessionConfigurationPage.fillDetailsInSessionConfigurationPage(testdata.idCard.fullName, testdata.idCard.sessionLanguage, testdata.idCard.documentCountry, testdata.idCard.documentType, testdata.idCard.launchMethod);
         expect(await introPageIncontext.isIncontextIntroPageDisplayed());
         await introPageIncontext.clickOnStartSession();
-                await dataValidationInContextPage.clickOnContinueButton();
- //       await dataValidationInContextPage.isTextMessageDisplayed(testdata.idCard.documentToVerify);
- //       await dataValidationInContextPage.isImgDisplayed(testdata.idCard.imageToVerify);
+        await dataValidationInContextPage.isTextMessageDisplayed(testdata.idCard.documentToVerify);
+        await dataValidationInContextPage.isImgDisplayed(testdata.idCard.imageToVerify);
     });
 
     test('Verify "Privacy Policy" Link', async () => {
