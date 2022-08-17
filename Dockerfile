@@ -19,5 +19,4 @@ RUN apt-get update
 
 RUN npx playwright install
 RUN npm ci
-RUN apt-get install webcam-server
 
