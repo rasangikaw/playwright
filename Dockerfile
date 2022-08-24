@@ -1,8 +1,5 @@
 FROM mcr.microsoft.com/playwright
 
-ARG GH_USERNAME=tempU
-ARG GH_TOKEN=tempT
-
 WORKDIR /usr/src/app
 
 COPY . .
